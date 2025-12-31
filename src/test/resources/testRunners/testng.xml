@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Regression Suite" verbose="5">
+    <listeners>
+        <listener class-name="com.qa.gorest.listeners.ExtentReportListener"/>
+    </listeners>
+
+    <test name="Go Rest API 1">
+        <parameter name="baseURI" value="https://gorest.co.in"/>
+        <classes>
+            <class name="com.qa.gorest.tests.CreateUserTest"/>
+          <!--  <class name="com.qa.gorest.tests.GetUserTest"/>-->
+        </classes>
+    </test>
+
+   <!-- <test name="RestfulBooker API">
+        <parameter name="baseURI" value="https://restful-booker.herokuapp.com"/>
+        <classes>
+            <class name="com.qa.gorest.tests.RestfulBooker">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Amadeus Flight API Test">
+
+        <parameter name="baseURI" value="https://test.api.amadeus.com"/>
+        <parameter name="grantType" value="client_credentials"/>
+        <parameter name="clientId" value="yAUKXwOvRhX6FlJoImlRDTMQO55DmFS6"/>
+        <parameter name="clientSecret" value="L87O9thAbG6RL0wR"/>
+
+        <classes>
+            <class name="com.qa.gorest.tests.AmadeusTest"/>
+        </classes>
+    </test>-->
+
+</suite>
