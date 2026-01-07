@@ -12,11 +12,7 @@ public class ConfigurationManager {
     private FileInputStream ip;
 
     public Properties initProp() {
-        String env = System.getProperty("env");
-        if (env == null) {
-            env = "qa";
-            System.out.println("Setting up default environment as " + env);
-        }
+        String env = System.getProperty("env","qa");
         properties = new Properties();
         try {
             switch (env) {

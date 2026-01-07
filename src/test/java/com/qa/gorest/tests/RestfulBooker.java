@@ -6,6 +6,8 @@ import io.restassured.response.Response;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class RestfulBooker extends BaseTest {
 
     @BeforeMethod
@@ -14,8 +16,11 @@ public class RestfulBooker extends BaseTest {
     }
 
     @Test
-    public void getAllUsers(){
+    public void getAllBookingIds(){
         Response response = restClient.get(RESTFUL_ENDPOINT,false);
         response.then().assertThat().statusCode(200);
+
+        List<Integer> ids = jp.readList(response,"$..bookingid");
+        System.out.println(ids);
     }
 }

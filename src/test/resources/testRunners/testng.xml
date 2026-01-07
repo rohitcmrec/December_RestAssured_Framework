@@ -5,23 +5,31 @@
         <listener class-name="com.qa.gorest.listeners.ExtentReportListener"/>
     </listeners>
 
-    <test name="Go Rest API 1">
+  <!--  <test name="Go Rest API 1">
         <parameter name="baseURI" value="https://gorest.co.in"/>
         <classes>
             <class name="com.qa.gorest.tests.CreateUserTest"/>
-          <!--  <class name="com.qa.gorest.tests.GetUserTest"/>-->
+            &lt;!&ndash;  <class name="com.qa.gorest.tests.GetUserTest"/>&ndash;&gt;
         </classes>
     </test>
 
-   <!-- <test name="RestfulBooker API">
+    <test name="RestfulBooker API">
         <parameter name="baseURI" value="https://restful-booker.herokuapp.com"/>
         <classes>
             <class name="com.qa.gorest.tests.RestfulBooker">
             </class>
         </classes>
+    </test>-->
+
+    <test name="Circuit API">
+        <parameter name="baseURI" value="https://api.jolpi.ca/ergast"/>
+        <classes>
+            <class name="com.qa.gorest.tests.CircuitTest">
+            </class>
+        </classes>
     </test>
 
-    <test name="Amadeus Flight API Test">
+  <!--  <test name="Amadeus Flight API Test">
 
         <parameter name="baseURI" value="https://test.api.amadeus.com"/>
         <parameter name="grantType" value="client_credentials"/>

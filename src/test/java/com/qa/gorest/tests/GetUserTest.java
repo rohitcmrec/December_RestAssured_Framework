@@ -24,7 +24,8 @@ public class GetUserTest extends BaseTest {
     public void getAllUser() {
         Response response = restClient.get(GOREST_ENDPOINT,true);
         response.then().assertThat().statusCode(APIStatusCode.OK.getCode());
-        List<User> responseUserList = response.as(new TypeRef<List<User>>() {});
+        List<User> responseUserList = response.as(new TypeRef<>() {
+        });
         System.out.println(responseUserList.get(0).getEmail());
     }
 

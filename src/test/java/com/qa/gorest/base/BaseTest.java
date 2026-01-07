@@ -2,6 +2,7 @@ package com.qa.gorest.base;
 
 import com.qa.gorest.client.RestClient;
 import com.qa.gorest.configuration.ConfigurationManager;
+import com.qa.gorest.utils.JsonPathValidator;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
@@ -23,14 +24,15 @@ public class BaseTest {
     protected Properties properties;
     protected RestClient restClient;
     protected String baseURI;
+    protected JsonPathValidator jp;
 
     @Parameters({"baseURI"})
     @BeforeClass
     public void setUp(String baseURI) {
-
         RestAssured.filters(new AllureRestAssured());
         cp = new ConfigurationManager();
         properties = cp.initProp();
         this.baseURI = baseURI;
+        jp = new JsonPathValidator();
     }
 }
